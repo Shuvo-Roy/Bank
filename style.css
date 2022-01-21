@@ -1,0 +1,10 @@
+body{
+    font-family: 'Oswald', sans-serif;
+    padding: 100px;
+}
+.submit-area{
+    margin-top: 60px;
+    padding: 20px;
+    border-radius:5px;
+    box-shadow: 2px 2px 2px 2px ghostwhite;
+}
