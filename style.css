@@ -8,3 +8,26 @@ body{
     border-radius:5px;
     box-shadow: 2px 2px 2px 2px ghostwhite;
 }
+#transc{
+    display: none;
+}
+.deposit{
+    background-color: slateblue;
+}
+.withdraw{
+    background-color: lightsalmon;
+}
+.balance{
+    background-color: orange;
+}
+.status{
+    margin: 0 10px;
+    color: white;
+    padding: 15px;
+}
+.submit-area2{
+    margin-top: 60px;
+    padding: 20px;
+    border-radius:5px;
+    background-color:tomato;
+}
