@@ -11,16 +11,22 @@ loginBtn.addEventListener("click", function (){
 
 const depositBtn=document.getElementById("depo");
 depositBtn.addEventListener("click",function(){
- const depoAmount=document.getElementById("depositAmount").value;
- const depoNumber = parseFloat(depoAmount);
-
- const currentdeposit= document.getElementById("currentDepo").innerText;
- const currentdepositNumber= parseFloat(currentdeposit);
- const totalDeposit = depoNumber + currentdepositNumber;
- document.getElementById("currentDepo").innerText=totalDeposit;
- document.getElementById("depositAmount").value="";
+        const depoNumber = getInput("depositAmount");
+        updateSpanText("currentDepo", depoNumber);
+        updateSpanText("currentbalance", depoNumber);
+        
+        document.getElementById("depositAmount").value="";
 })
+// withdrow event
 
+
+
+    function updateSpanText(id,depoNumber){
+        const current=document.getElementById(id).innerText;
+        const currentNumber = parseFloat(current);
+        const total = depoNumber + currentNumber;
+        document.getElementById(id).innerText= total;
+    }
 
 
 
@@ -28,5 +34,16 @@ depositBtn.addEventListener("click",function(){
 
 const WithdrawBtn=document.getElementById("withdo");
 WithdrawBtn.addEventListener("click",function(){
- console.log("clicked");
+ const withdrawNumber= getInput("withdrawAmount")
+
+ updateSpanText("currentWith",withdrawNumber);
+ updateSpanText("currentbalance",-1 * withdrawNumber);
+
+ document.getElementById("withdrawAmount").value="";
 })
+
+function getInput(id){
+    const Amount = document.getElementById(id).value;
+    const amountNumber =  parseFloat(Amount);
+    return amountNumber;
+}
